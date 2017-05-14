@@ -1,7 +1,6 @@
+//hamburger menu
+
 var hamburger = document.querySelector('.hamburger');
-
-console.log(hamburger);
-
 hamburger.addEventListener('click', function(e) {
   e.preventDefault();
   //make a cross
@@ -16,16 +15,26 @@ hamburger.addEventListener('click', function(e) {
   menu.classList.toggle('show_menu');
 })
 
+//submenus
 var submenuItems = document.querySelectorAll('.small_cross');
 for (var i = 0; i < submenuItems.length; i++) {
   submenuItems[i].addEventListener('click', function(e) {
-    if(this.innerText=='+'){
-      this.innerText='-';
-    }else{
-      this.innerText='+';
+    if (this.innerText == '+') {
+      this.innerText = '-';
+    } else {
+      this.innerText = '+';
     }
 
-  this.nextElementSibling.classList.toggle('hidden');
+    this.nextElementSibling.classList.toggle('hidden');
 
+  })
+}
+//deactive slider interval by clicking on a circle
+
+var sliderCircle = document.querySelectorAll('.inside_circle');
+for(var i=0;i<sliderCircle.length;i++){
+  sliderCircle[i].addEventListener('click',function(){
+    
+    },3000);
   })
 }
