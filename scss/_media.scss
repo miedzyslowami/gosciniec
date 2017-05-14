@@ -1,0 +1,14 @@
+$tablet:'()';
+$laptop:'()';
+
+@mixin tablet{
+  @media #{$tablet}{
+    @content;
+  }
+}
+
+@mixin laptop{
+  @media #{$laptop}{
+    @content;
+  }
+}

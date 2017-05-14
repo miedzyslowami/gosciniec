@@ -1,0 +1,140 @@
+@import 'reset';
+@import 'media';
+
+%clearfix {
+  &:after,
+  &:before {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+
+%hidden {
+  &.hidden {
+    display: none;
+  }
+}
+$navigationBackgroundColor: lighten(grey,40%);
+$outerNavigationMargin: 3%;
+$hamburgerColor: #827c7c;
+$navigationHeight: 70px;
+
+body {
+  transition: background 0.5s ease-out;
+
+  &.mask {
+    background: black;
+  }
+
+  .navigation_bar {
+    width: 100vw;
+    height: $navigationHeight;
+    background: $navigationBackgroundColor;
+    position: fixed;
+    border-bottom: 1px solid grey;
+    z-index: 9999;
+
+    .logo {
+      position: relative;
+      display: block;
+      float: left;
+      top: 50%;
+      transform: translate(0%, -50%);
+      // width: 50%;
+      height: 60%;
+      margin: auto auto auto $outerNavigationMargin;
+      @extend %clearfix;
+    }
+
+    .hamburger {
+      position: relative;
+      display: block;
+      float: right;
+      top: 50%;
+      transform: translate(0%, -50%);
+      margin-right: $outerNavigationMargin;
+      @extend %clearfix;
+
+      span {
+        position: absolute;
+        right: 0;
+        background: $hamburgerColor;
+        width: 30px;
+        height: 3px;
+        box-shadow: 0 -10px 0 0 $hamburgerColor, 0 10px 0 0 $hamburgerColor;
+        transition: box-shadow 0.5s ease-out,transform 0.5s ease-out;
+        @extend %hidden;
+
+        &.cross:first-child {
+          transform: rotate(45deg);
+          box-shadow: none;
+        }
+
+        &.cross:last-child {
+          transform: rotate(315deg);
+          box-shadow: none;
+        }
+      }
+    }
+
+    .menu {
+      position: absolute;
+      top: $navigationHeight + 1px;
+      width: 80%;
+      float: left;
+      left: -100%;
+      background: white;
+      @extend %clearfix;
+      transition: left 0.6s ease-out;
+      z-index: 9999;
+
+      &.show_menu {
+        left: 0;
+      }
+
+      li {
+        padding: 10px;
+        display: block;
+        border-bottom: 1px solid $hamburgerColor;
+        margin: 0 13px;
+        @extend %clearfix;
+
+        & .small_cross {
+          width: 10px;
+          height: 10px;
+          float: right;
+        }
+
+        &:first-of-type {
+          margin-top: 20px;
+        }
+
+        &:last-of-type {
+          margin-bottom: 100%;
+        }
+
+        ul {
+          @extend %hidden;
+          display: block;
+
+          &.submenu {
+            background-color: #e50a34;
+            color: white;
+            margin: 0;
+
+            li {
+              &:first-of-type {
+                margin-top: 0;
+              }
+
+              &:last-of-type {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
