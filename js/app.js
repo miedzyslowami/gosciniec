@@ -7,7 +7,7 @@ hamburger.addEventListener('click', function(e) {
   var span = hamburger.querySelectorAll('span');
   span[0].classList.toggle('cross');
   span[1].classList.toggle('cross');
-  span[1].classList.toggle('hidden');
+
   //show menu
   var menu = document.querySelector('.menu');
   var mask = document.querySelector('body');
@@ -34,7 +34,12 @@ for (var i = 0; i < submenuItems.length; i++) {
 var sliderCircle = document.querySelectorAll('.inside_circle');
 for(var i=0;i<sliderCircle.length;i++){
   sliderCircle[i].addEventListener('click',function(){
-    
+
     },3000);
-  })
+  }
+
+//make a table responsive
+var headings=document.querySelectorAll('.heading');
+for (var i=0; i<headings.length;i++){
+  headings[i].colSpan='3';
 }

@@ -1,0 +1,33 @@
+.footer {
+  position: relative;
+  bottom: 0;
+  background: black;
+  color: white;
+  @include tablet {
+    height: 63px;
+  }
+
+  p {
+    display: block;
+    box-sizing: border-box;
+    padding: 6px;
+    text-align: center;
+    z-index: 0;
+    @include tablet {
+          margin: 2%;
+      &:first-of-type {
+        float: right;
+      }
+
+      &:last-of-type {
+        float: left;
+      }
+      &:after,
+      &:before {
+        content: '';
+        clear: both;
+        display: table;
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+.prices {
+  text-align: center;
+  margin: 3%;
+  background-color: $navigationBackgroundColor;
+  @include tablet{
+      margin: 0;
+  }
+  h3{
+    padding:10px;
+  }
+
+  table {
+    border-collapse: collapse;
+    @include tablet{
+        width: 100%;
+    }
+
+    colgroup {
+      col {
+        background-color: $navigationBackgroundColor;
+      }
+
+      col:first-of-type {
+        background-color: #cbcbcb;
+      }
+    }
+
+    tr {
+      border-collapse: collapse;
+
+      th {
+        background-color: #e50a34;
+        color: white;
+        padding: 5px;
+        border-collapse: collapse;
+
+        &:nth-of-type(2) {
+          border-left: 0.3px solid white;
+          border-right: 0.3px solid white;
+        }
+      }
+
+      td {
+        border-collapse: collapse;
+        text-align: center;
+        padding: 12px 0;
+        border-collapse: collapse;
+
+        &.heading {
+          background-color: #dfdfdf;
+          border: 0.1px solid #cbcbcb;
+        }
+
+        &:first-of-type {
+          border-left: 0.1px solid #cbcbcb;
+        }
+
+        &:last-of-type {
+          border-right: 0.1px solid #cbcbcb;
+        }
+      }
+    }
+  }
+
+  .uwaga {
+        padding-top: 17px;
+    span:first-of-type {
+      font-weight: bold;
+      color: black;
+    }
+
+    span {
+      font-weight: normal;
+      color: #e50a34;
+    }
+
+  }
+  p{
+        padding-bottom: 17px;
+  }
+  @extend %link;
+}

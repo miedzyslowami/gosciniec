@@ -8,7 +8,7 @@ var slide1=document.querySelector('#slide-1');
 var slide2=document.querySelector('#slide-2');
 var slideStyle1=window.getComputedStyle(slide1);
 var slideStyle2=window.getComputedStyle(slide2);
-//firs useage
+//first useage
 sliderCircle[1].style.fill="white";
 setTimeout(function(){
   slide1.style.left= "-"+sliderImageWidth;
