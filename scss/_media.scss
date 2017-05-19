@@ -1,5 +1,5 @@
 $tablet:'(min-width:768px)';
-$laptop:'()';
+$laptop:'(min-width:1024px)';
 
 @mixin tablet{
   @media #{$tablet}{

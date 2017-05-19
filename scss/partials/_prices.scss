@@ -6,7 +6,7 @@
       margin: 0;
   }
   h3{
-    padding:10px;
+    padding:30px;
   }
 
   table {
@@ -22,11 +22,50 @@
 
       col:first-of-type {
         background-color: #cbcbcb;
+        @include laptop{
+          background-color: $navigationBackgroundColor;
+        }
       }
+      col:nth-of-type(2){
+          @include laptop{
+        background-color: #cbcbcb;
+
+      }
+    }
     }
 
     tr {
       border-collapse: collapse;
+      &:nth-of-type(6),&:nth-of-type(7){
+        td{
+          font-weight: bold;
+        }
+      }
+      &:last-of-type{
+        td{
+          color:#e50a34;
+          font-weight: bold;
+          text-transform: uppercase;
+          border-bottom: none;
+        }
+
+      }
+      @include laptop{
+        td{
+          border-bottom:1px solid grey;
+        }
+      &:hover{
+        background-color: grey;
+
+      }
+
+      &:nth-of-type(4){
+        @include laptop{
+          font-weight: bold;
+        }
+      }
+      }
+
 
       th {
         background-color: #e50a34;
@@ -38,6 +77,16 @@
           border-left: 0.3px solid white;
           border-right: 0.3px solid white;
         }
+        &.laptop_only{
+          display: none;
+          @include laptop{
+            background-color:#e50a34;
+            display: table;
+            height: 3rem;
+                width: 100%;
+
+          }
+        }
       }
 
       td {
@@ -45,18 +94,41 @@
         text-align: center;
         padding: 12px 0;
         border-collapse: collapse;
+        @include laptop{
+            height: 3rem;
+
+        }
 
         &.heading {
           background-color: #dfdfdf;
           border: 0.1px solid #cbcbcb;
+          @include laptop{
+            display: none;
+          }
+        }
+        &.laptop_only{
+          display: none;
+          @include laptop{
+            display: table-cell;
+              height: 3rem;
+              text-align: center;
+              padding:12px 0;
+          }
         }
 
         &:first-of-type {
           border-left: 0.1px solid #cbcbcb;
         }
-
+        &:nth-of-type(2){
+            @include laptop{
+              font-weight: bolder;
+            }
+        }
         &:last-of-type {
           border-right: 0.1px solid #cbcbcb;
+          @include tablet{
+            width:24%;
+          }
         }
       }
     }
@@ -77,6 +149,7 @@
   }
   p{
         padding-bottom: 17px;
+        margin: 10px;
   }
   @extend %link;
 }

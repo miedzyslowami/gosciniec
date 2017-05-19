@@ -14,7 +14,7 @@
     text-align: center;
     z-index: 0;
     @include tablet {
-          margin: 2%;
+          margin-top: 2%;
       &:first-of-type {
         float: right;
       }

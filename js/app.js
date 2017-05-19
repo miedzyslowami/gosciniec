@@ -10,8 +10,8 @@ hamburger.addEventListener('click', function(e) {
 
   //show menu
   var menu = document.querySelector('.menu');
-  var mask = document.querySelector('body');
-  mask.classList.toggle('mask');
+  var mask = document.getElementById('mask');
+  mask.classList.toggle('visible');
   menu.classList.toggle('show_menu');
 })
 

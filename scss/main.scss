@@ -1,6 +1,7 @@
 @import 'variables';
 @import 'reset';
 @import 'media';
+@import 'fonts';
 @import 'partials/header';
 @import 'partials/assets';
 @import 'partials/prices';
@@ -39,14 +40,15 @@
 }
 
 body {
+  font-family:'latoregular', Arial, sans-serif;
   transition: background 0.5s ease-out;
+  font-size: 16px;
   min-width: 320px;
   max-width: 1200px;
   @include tablet{
-  max-width: 768px; 
+  max-width: 768px;
   }
-
-  &.mask {
-    background: black;
+  @include laptop{
+    max-width:1200px;
   }
 }
