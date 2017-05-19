@@ -1,16 +1,17 @@
 .header {
   // height: $headerHeight;
   width: 100vw;
+
   #mask {
     display: none;
     height: 100vh;
-      width: 100vw;
-      background-color: black;
-      &.visible{
-        display: block;
-      }
-  }
+    width: 100vw;
+    background-color: black;
 
+    &.visible {
+      display: block;
+    }
+  }
 
   .navigation_bar {
     width: 100vw;
@@ -20,17 +21,15 @@
     border-bottom: 1px solid grey;
     z-index: 9999;
     position: relative;
-    @include tablet{
-
+    @include tablet {
       height: 100px;
     }
-    @include laptop{
+    @include laptop {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-          // height: 12vh;
-
+      // height: 12vh;
     }
 
     .logo {
@@ -43,20 +42,20 @@
       height: 60%;
       margin: auto auto auto $outerNavigationMargin;
       @extend %clearfix;
-      @include tablet{
-      float:none;
-      left:50%;
+      @include tablet {
+        float: none;
+        left: 50%;
         transform: translate(-50%, -50%);
         height: 35%;
-        top:30%;
+        top: 30%;
       }
-      @include laptop{
+      @include laptop {
         left: 0;
         top: 0;
         margin: 20px;
         transform: none;
         height: 55%;
-    }
+      }
     }
 
     .hamburger {
@@ -69,8 +68,8 @@
       width: 50px;
       height: 50px;
       @extend %clearfix;
-      @include tablet{
-        display:none;
+      @include tablet {
+        display: none;
       }
 
       span {
@@ -106,18 +105,18 @@
       @extend %clearfix;
       transition: left 0.6s ease-out;
       z-index: 9999;
-      @include tablet{
+      @include tablet {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        left:50%;
+        left: 50%;
         transform: translate(-50%, 0);
-        margin:auto;
+        margin: auto;
         background: none;
         width: 100vw;
         top: 70%;
       }
-      @include laptop{
+      @include laptop {
         width: 70%;
         transform: none;
         right: 0;
@@ -126,7 +125,6 @@
         float: none;
         transform: translate(-60%, 0);
         transition: none;
-
       }
 
       &.show_menu {
@@ -139,130 +137,156 @@
         border-bottom: 1px solid $hamburgerColor;
         margin: 0 13px;
         @extend %clearfix;
-        @include tablet{
+        @include tablet {
           display: inline-block;
-          margin:0;
-          padding:0;
-          border-bottom:none;
-        }
-        @include laptop{
-          float:right;
-        }
+          margin: 0;
+          padding: 0;
+          border-bottom: none;
 
-        & .small_cross {
-          width: 10px;
-          height: 10px;
-          float: right;
-          @include tablet{
-          display: none;
-          }
-        }
-
-        &:first-of-type {
-          margin-top: 20px;
-          @include tablet{
-            margin:0;
-          }
-        }
-
-        &:last-of-type {
-          margin-bottom: 100%;
-          @include tablet{
-            margin:0;
-          }
-        }
-
-        ul {
-          @extend %hidden;
-          display: block;
-
-          &.submenu {
-            background-color: #e50a34;
-            color: white;
-            margin: 0;
-
-            li {
-              &:first-of-type {
-                margin-top: 0;
-              }
+          &:hover {
+            & .submenu {
+              display: flex;
+              justify-content: space-between;
+              position: absolute;
+              padding: 4px;
+              margin-top: 8px;
 
               &:last-of-type {
-                margin-bottom: 0;
+                // transform: translate(-35%);
               }
+
+              & li {
+                padding: 0 16px;
+
+                &:hover {
+                  background-color: #ab0a29;
+                }
+              }
+            }
+          }
+        }
+        @include laptop {
+          float: right;
+          border-bottom: none;
+          // &:hover{
+          //   .submenu{
+          //     display:inline-block;
+          //     position: absolute;
+          //     padding: 6px;
+          //   }
+        }
+      }
+
+      & .small_cross {
+        width: 10px;
+        height: 10px;
+        float: right;
+        @include tablet {
+          display: none;
+        }
+      }
+
+      &:first-of-type {
+        margin-top: 20px;
+        @include tablet {
+          margin: 0;
+        }
+      }
+
+      &:last-of-type {
+        margin-bottom: 100%;
+        @include tablet {
+          margin: 0;
+        }
+      }
+
+      ul {
+        @extend %hidden;
+        display: block;
+
+        &.submenu {
+          background-color: #e50a34;
+          color: white;
+          margin: 0;
+
+          li {
+            &:first-of-type {
+              margin-top: 0;
+            }
+
+            &:last-of-type {
+              margin-bottom: 0;
             }
           }
         }
       }
     }
   }
+}
 
-  .slider {
-    position: relative;
-    // top: $navigationHeight;
-    @include tablet{
-      top:0;
-    };
-    overflow: hidden;
-    width: 100vw;
-    height: $sliderHeight;
-    background-size: cover;
-    background-repeat: no-repeat;
-    overflow-y: scroll;
-    @include tablet{
-      height: 56vh;
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: $sliderHeight;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-y: scroll;
+  @include tablet {
+    height: 46vh;
+    top: 0;
+  }
+  @include laptop {
+    height: 70vh;
+  }
 
-    }
+  .slide_box {
+    width: 200vw;
+    height: 100%;
 
-    .slide_box {
-      width: 200vw;
+    .slide {
+      position: relative;
+      display: inline-block;
+      float: left;
+      width: 100vw;
       height: 100%;
-
-      .slide {
-        position: relative;
-        display: inline-block;
-        float: left;
-        width: 100vw;
-        height: 100%;
-        background-size: contain;
-        background-repeat: no-repeat;
-        transition: left 1s linear;
-        box-sizing: border-box;
-        z-index: 1;
-      }
-
-      #slide-1 {
-        // background-image: url('../images/slider-img-1.jpg');
-      }
-
-      #slide-2 {
-        // background-image: url('../images/slider-img-2.jpg');
-      }
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: left 1s linear;
+      box-sizing: border-box;
+      z-index: 1;
     }
+  }
 
-    .cirlce_box {
-      width: 10%;
-      margin: 0 auto;
-      bottom: 7px;
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%);
-      z-index: 3;
+  .cirlce_box {
+    width: 10%;
+    margin: 0 auto;
+    top: 84px;
+    @include tablet {
+      top: 250px;
+    }
+    @include laptop {
+      top: 344px;
+    }
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 3;
 
-      .slider_circle {
-        width: 32%;
+    .slider_circle {
+      width: 32%;
 
-        .inside_circle {
-          fill: red;
-          cx: 25;
-          cy: 25;
-          r: 20;
-          stroke: white;
-          stroke-width: 6;
-          transition: fill 1.5s;
+      .inside_circle {
+        fill: red;
+        cx: 25;
+        cy: 25;
+        r: 20;
+        stroke: white;
+        stroke-width: 6;
+        transition: fill 1.5s;
 
-          &.inactive {
-            fill: white;
-          }
+        &.inactive {
+          fill: white;
         }
       }
     }

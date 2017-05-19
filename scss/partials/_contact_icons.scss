@@ -8,10 +8,13 @@
     height: 70px;
     background-color: rgba(255, 255, 255, 0.4);
     position: fixed;
-    z-index: 9999;
-    /* height: 23px; */
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     &:first-of-type {
-      bottom: 25vh;
+      bottom: 140px;
       left: 5vw;
 
       img {
@@ -19,13 +22,115 @@
       }
     }
 
-    &:last-of-type {
-      bottom: 9vh;
+    &:nth-of-type(2) {
+      bottom: 62px;
       left: 5vw;
 
       img {
         margin: 20px 16px;
       }
     }
+  }
+}
+
+.contact_telnumber_window {
+  top: -250px;
+  transition: top 1s linear;
+  position: fixed;
+  width: 750px;
+  height: 125px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 999;
+  background: #e6e6e6;
+  box-shadow: 0 0 20px 2px grey;
+
+  &.visible {
+    top: 200px;
+  }
+
+  & h4 {
+    display: block;
+    margin: 15px auto;
+    text-align: center;
+    color: #e50a34;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  .close {
+    background-color: #e50a34;
+    padding: 0;
+    float: right;
+    clear: both;
+    height: 20px;
+  }
+
+  img {
+    padding-left: 115px;
+  }
+
+  & p {
+    display: inline-block;
+  }
+
+  & p:first-of-type {
+    color: #e50a34;
+    font-size: 1.5rem;
+  }
+}
+
+.contact_form_window {
+  top: -340px;
+  transition: top 1s linear;
+  width: 750px;
+  height: 270px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 99999;
+  background: #e6e6e6;
+  box-shadow: 0 0 20px 2px grey;
+  position: fixed;
+
+  h3 {
+    text-align: center;
+    color: #e50a34;
+    margin: 13px 0;
+  }
+
+  .close {
+    background-color: #e50a34;
+    padding: 0;
+    float: right;
+    clear: both;
+    height: 20px;
+  }
+
+  form {
+    width: 53%;
+    margin: 0 auto;
+
+    label {
+      display: block;
+      text-align: right;
+      padding: 2px;
+
+      &.form {
+        outline: 1 solid grey;
+      }
+
+      input {
+        float: right;
+        width: 170px;
+      }
+
+      textarea {
+        width: 170px;
+      }
+    }
+  }
+
+  &.visible {
+    top: 30px;
   }
 }
