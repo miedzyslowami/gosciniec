@@ -82,7 +82,7 @@
           @include laptop{
             background-color:#e50a34;
             display: table;
-            height: 3rem;
+            height: 4rem;
                 width: 100%;
 
           }
@@ -95,7 +95,7 @@
         padding: 12px 0;
         border-collapse: collapse;
         @include laptop{
-            height: 3rem;
+            height: 4rem;
 
         }
 
@@ -110,7 +110,7 @@
           display: none;
           @include laptop{
             display: table-cell;
-              height: 3rem;
+              height: 4rem;
               text-align: center;
               padding:12px 0;
           }

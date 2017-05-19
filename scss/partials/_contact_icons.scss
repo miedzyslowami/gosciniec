@@ -1,0 +1,31 @@
+.contact_icon_from_tablet_only {
+  display: none;
+  @include tablet {
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: fixed;
+    z-index: 9999;
+    /* height: 23px; */
+    &:first-of-type {
+      bottom: 25vh;
+      left: 5vw;
+
+      img {
+        margin: 13px 20px;
+      }
+    }
+
+    &:last-of-type {
+      bottom: 9vh;
+      left: 5vw;
+
+      img {
+        margin: 20px 16px;
+      }
+    }
+  }
+}
