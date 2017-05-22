@@ -55,17 +55,17 @@
       height: 30vh;
     }
 
-    &.first_asset {
-      background-image: url('../images/1.jpg');
-    }
-
-    &.second_asset {
-      background-image: url('../images/2.jpg');
-    }
-
-    &.third_asset {
-      background-image: url('../images/3.jpg');
-    }
+    // &.first_asset {
+    //   background-image: url('../images/1.jpg');
+    // }
+    //
+    // &.second_asset {
+    //   background-image: url('../images/2.jpg');
+    // }
+    //
+    // &.third_asset {
+    //   background-image: url('../images/3.jpg');
+    // }
   }
   @extend %link;
 }
