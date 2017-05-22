@@ -3,19 +3,6 @@
   position: static;
   height: $navigationHeight;
 
-  #mask {
-    display: none;
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    top: $navigationHeight;
-    background-color: rgba(0, 0, 0, 0.77);
-
-    &.visible {
-      display: block;
-    }
-  }
-
   .navigation_bar {
     width: 100vw;
     height: $navigationHeight;
@@ -231,8 +218,6 @@
   position: static;
   overflow: hidden;
   width: 100vw;
-  background-size: cover;
-  background-repeat: no-repeat;
   overflow-y: scroll;
   height: auto;
 
@@ -246,8 +231,6 @@
       float: left;
       width: 100vw;
       height: 100%;
-      background-size: contain;
-      background-repeat: no-repeat;
       transition: left 1s linear;
       box-sizing: border-box;
       z-index: 1;
@@ -257,17 +240,16 @@
 
 .cirlce_box {
   width: 10%;
+  height: 4px;
   margin: 0 auto;
-  top: 173px;
-  position: static;
-  transform: translate(0,100%);
+  top: -13px;
+  position: relative;
   z-index: 3;
   text-align: center;
-  @include tablet {
-    top: 250px;
-  }
-  @include laptop {
-    top: 344px;
+
+  div {
+    position: absolute;
+    bottom: 2px;
   }
 
   .slider_circle {
