@@ -206,7 +206,7 @@
         display: block;
 
         &.submenu {
-          background-color: #e50a34;
+          background-color: $acentColor;
           color: white;
           margin: 0;
 
@@ -231,13 +231,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   overflow-y: scroll;
-  @include tablet {
-    height: 46vh;
-    top: 0;
-  }
-  @include laptop {
-    height: 70vh;
-  }
+  height: auto;
 
   .slide_box {
     width: 200vw;
@@ -263,7 +257,7 @@
     margin: 0 auto;
     top: 173px;
     position: static;
-    
+
       transform: translate(0,100%);
       z-index: 3;
       text-align: center;

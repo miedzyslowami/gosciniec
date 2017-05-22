@@ -53,13 +53,13 @@
     display: block;
     margin: 15px auto;
     text-align: center;
-    color: #e50a34;
+    color: $acentColor;
     font-size: 1.5rem;
     text-transform: uppercase;
   }
 
   .close {
-    background-color: #e50a34;
+    background-color: $acentColor;
     padding: 0;
     float: right;
     clear: both;
@@ -75,7 +75,7 @@
   }
 
   & p:first-of-type {
-    color: #e50a34;
+    color: $acentColor;
     font-size: 1.5rem;
   }
 }
@@ -94,12 +94,12 @@
 
   h3 {
     text-align: center;
-    color: #e50a34;
+    color: $acentColor;
     margin: 13px 0;
   }
 
   .close {
-    background-color: #e50a34;
+    background-color: $acentColor;
     padding: 0;
     float: right;
     clear: both;

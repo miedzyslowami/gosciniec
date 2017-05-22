@@ -2,17 +2,18 @@
   text-align: center;
   margin: 3%;
   background-color: $navigationBackgroundColor;
-  @include tablet{
-      margin: 0;
+  @include tablet {
+    margin: 0;
   }
-  h3{
-    padding:30px;
+
+  h3 {
+    padding: 30px;
   }
 
   table {
     border-collapse: collapse;
-    @include tablet{
-        width: 100%;
+    @include tablet {
+      width: 100%;
     }
 
     colgroup {
@@ -22,53 +23,54 @@
 
       col:first-of-type {
         background-color: #cbcbcb;
-        @include laptop{
+        @include laptop {
           background-color: $navigationBackgroundColor;
         }
       }
-      col:nth-of-type(2){
-          @include laptop{
-        background-color: #cbcbcb;
 
+      col:nth-of-type(2) {
+        @include laptop {
+          background-color: #cbcbcb;
+        }
       }
-    }
     }
 
     tr {
       border-collapse: collapse;
-      &:nth-of-type(6),&:nth-of-type(7){
-        td{
+
+      &:nth-of-type(6),
+      &:nth-of-type(7) {
+        td {
           font-weight: bold;
         }
       }
-      &:last-of-type{
-        td{
-          color:#e50a34;
+
+      &:last-of-type {
+        td {
+          color: $acentColor;
           font-weight: bold;
           text-transform: uppercase;
           border-bottom: none;
         }
-
       }
-      @include laptop{
-        td{
-          border-bottom:1px solid grey;
+      @include laptop {
+        td {
+          border-bottom: 1px solid grey;
         }
-      &:hover{
-        background-color: grey;
 
-      }
+        &:hover {
+          background-color: grey;
+        }
 
-      &:nth-of-type(4){
-        @include laptop{
-          font-weight: bold;
+        &:nth-of-type(4) {
+          @include laptop {
+            font-weight: bold;
+          }
         }
       }
-      }
-
 
       th {
-        background-color: #e50a34;
+        background-color: $acentColor;
         color: white;
         padding: 5px;
         border-collapse: collapse;
@@ -77,14 +79,14 @@
           border-left: 0.3px solid white;
           border-right: 0.3px solid white;
         }
-        &.laptop_only{
+
+        &.laptop_only {
           display: none;
-          @include laptop{
-            background-color:#e50a34;
+          @include laptop {
+            background-color: $acentColor;
             display: table;
             height: 4rem;
-                width: 100%;
-
+            width: 100%;
           }
         }
       }
@@ -94,40 +96,42 @@
         text-align: center;
         padding: 12px 0;
         border-collapse: collapse;
-        @include laptop{
-            height: 4rem;
-
+        @include laptop {
+          height: 4rem;
         }
 
         &.heading {
           background-color: #dfdfdf;
           border: 0.1px solid #cbcbcb;
-          @include laptop{
+          @include laptop {
             display: none;
           }
         }
-        &.laptop_only{
+
+        &.laptop_only {
           display: none;
-          @include laptop{
+          @include laptop {
             display: table-cell;
-              height: 4rem;
-              text-align: center;
-              padding:12px 0;
+            height: 4rem;
+            text-align: center;
+            padding: 12px 0;
           }
         }
 
         &:first-of-type {
           border-left: 0.1px solid #cbcbcb;
         }
-        &:nth-of-type(2){
-            @include laptop{
-              font-weight: bolder;
-            }
+
+        &:nth-of-type(2) {
+          @include laptop {
+            font-weight: bolder;
+          }
         }
+
         &:last-of-type {
           border-right: 0.1px solid #cbcbcb;
-          @include tablet{
-            width:24%;
+          @include tablet {
+            width: 24%;
           }
         }
       }
@@ -135,7 +139,8 @@
   }
 
   .uwaga {
-        padding-top: 17px;
+    padding-top: 17px;
+
     span:first-of-type {
       font-weight: bold;
       color: black;
@@ -143,13 +148,13 @@
 
     span {
       font-weight: normal;
-      color: #e50a34;
+      color: $acentColor;
     }
-
   }
-  p{
-        padding-bottom: 17px;
-        margin: 10px;
+
+  p {
+    padding-bottom: 17px;
+    margin: 10px;
   }
   @extend %link;
 }
