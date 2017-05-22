@@ -1,13 +1,15 @@
 .header {
   width: 100vw;
   position: static;
-    height: 70px;
+  height: $navigationHeight;
 
   #mask {
     display: none;
     height: 100vh;
     width: 100vw;
-    background-color: black;
+    position: absolute;
+    top: $navigationHeight;
+    background-color: rgba(0, 0, 0, 0.77);
 
     &.visible {
       display: block;
@@ -224,6 +226,7 @@
     }
   }
 }
+
 .slider {
   position: static;
   overflow: hidden;
@@ -252,39 +255,36 @@
   }
 }
 
-    .cirlce_box {
-      width: 10%;
-    margin: 0 auto;
-    top: 173px;
-    position: static;
+.cirlce_box {
+  width: 10%;
+  margin: 0 auto;
+  top: 173px;
+  position: static;
+  transform: translate(0,100%);
+  z-index: 3;
+  text-align: center;
+  @include tablet {
+    top: 250px;
+  }
+  @include laptop {
+    top: 344px;
+  }
 
-      transform: translate(0,100%);
-      z-index: 3;
-      text-align: center;
+  .slider_circle {
+    width: 32%;
 
-      @include tablet {
-        top: 250px;
-      }
-      @include laptop {
-        top: 344px;
-      }
+    .inside_circle {
+      fill: red;
+      cx: 25;
+      cy: 25;
+      r: 20;
+      stroke: white;
+      stroke-width: 6;
+      transition: fill 1.5s;
 
-
-      .slider_circle {
-        width: 32%;
-
-        .inside_circle {
-          fill: red;
-          cx: 25;
-          cy: 25;
-          r: 20;
-          stroke: white;
-          stroke-width: 6;
-          transition: fill 1.5s;
-
-          &.inactive {
-            fill: white;
-          }
-        }
+      &.inactive {
+        fill: white;
       }
     }
+  }
+}
