@@ -41,31 +41,16 @@
     text-align: center;
     padding: 2%;
     box-sizing: border-box;
-    @include tablet {}
   }
 
   div {
-    height: 35vh;
     width: 97%;
-    background-size: contain;
-    background-repeat: no-repeat;
     border: 3px solid white;
     margin: 0 auto;
-    @include tablet {
-      height: 30vh;
-    }
 
-    // &.first_asset {
-    //   background-image: url('../images/1.jpg');
-    // }
-    //
-    // &.second_asset {
-    //   background-image: url('../images/2.jpg');
-    // }
-    //
-    // &.third_asset {
-    //   background-image: url('../images/3.jpg');
-    // }
+    img {
+      width: 100%;
+    }
   }
   @extend %link;
 }

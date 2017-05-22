@@ -9,19 +9,28 @@
 
   .ordered_details {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    @include tablet{
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
 
     @extend %clearfix;
 
     .details {
-      width: 48%;
+      @include tablet{
+        width: 48%;
+      }
       display: flex;
       margin: 7px;
 
       img {
-        max-height: 100px;
-        min-width: 100px;
+        max-height: 75px;
+        min-width: 75px;
+        @include tablet{
+          max-height: 100px;
+          min-width: 100px;
+        }
       }
     }
 
@@ -31,11 +40,13 @@
     }
 
     h2 {
+      font-size: 1rem;
       margin-left: 8px;
+      color: $acentColor;
+      @include tablet{
+        font-size: 1.5rem;
+      }
     }
 
-    h2 {
-      color: $acentColor;
-    }
   }
 }
